@@ -17,6 +17,7 @@ class ResultadoActivity : AppCompatActivity() {
 
     var valorIMC = ""
     var informacao = ""
+    var classificacao = ""
 //    var imagem = ImageView(this);
     var backColor = 0
 
@@ -34,32 +35,38 @@ class ResultadoActivity : AppCompatActivity() {
 //            imagem.setImageDrawable(R.drawable.adultos)
             if (resultado <= 18.5) {
                 valorIMC = resultado.toString()
+                classificacao = "Abaixo do peso"
                 informacao = "Você está abaixo do peso ideal. Isso pode ser apenas uma característica pessoal, mas também pode ser um sinal de\n" +
                         "desnutrição ou de algum problema de saúde. Caso esteja perdendo peso sem motivo aparente, procure um médico."
                 backColor = getColor(R.color.amarelo)
             } else if (resultado > 18.5 && resultado <= 24.9) {
                 valorIMC = resultado.toString()
+                classificacao = "Peso normal"
                 informacao = "Você está no peso ideal. Parabéns! Mantenha seus hábitos alimentares e cuidados com a " +
                         "saúde"
                 backColor = getColor(R.color.azul)
             } else if (resultado >= 25.0 && resultado <= 29.9) {
                 valorIMC = resultado.toString()
+                classificacao = "Excesso de peso"
                 informacao = "Atenção! Alguns quilos a mais já são suficientes para que algumas pessoas desenvolvam doenças associadas, como\n" +
                         "diabetes e hipertensão. É importante rever seus hábitos. Procure um médico."
                 backColor = getColor(R.color.amarelo)
             } else if (resultado >= 30.0 && resultado <= 34.9) {
                 valorIMC = resultado.toString()
+                classificacao = "Obesidade classe 1"
                 informacao = "Sinal de alerta! O excesso de peso é fator de risco para desenvolvimento de outros problemas de saúde. A boa notícia\n" +
                         "é que uma pequena perda de peso já traz benefícios à saúde. Procure um médico para definir o tratamento mais adequado\n" +
                         "para você"
                 backColor = getColor(R.color.vermelho)
             } else if (resultado >= 35.0 && resultado <= 29.9) {
                 valorIMC = resultado.toString()
+                classificacao = "Obesidade classe 2"
                 informacao = "Sinal vermelho! Ao atingir este nível de IMC, o risco de doenças associadas está entre alto e muito alto. Busque\n" +
                         "ajuda de um profissional de saúde; não perca tempo."
                 getColor(R.color.vermelho)
             } else if (resultado >= 40.0) {
                 valorIMC = resultado.toString()
+                classificacao = "Obesidade classe 3"
                 informacao = "Sinal vermelho! Ao atingir este nível de IMC, o risco de doenças associadas é muito alto. Busque ajuda de um\n" +
                         "profissional de saúde; não perca tempo."
                 backColor = getColor(R.color.vermelho)
@@ -68,16 +75,19 @@ class ResultadoActivity : AppCompatActivity() {
 //            imagem.setImageDrawable(R.drawable.idosos)
             if (resultado < 22) {
                 valorIMC = resultado.toString()
+                classificacao = "Abaixo do peso"
                 informacao = "Você está abaixo do peso ideal. Isso pode ser apenas uma característica pessoal, mas também pode ser um sinal de\n" +
                         "desnutrição ou de algum problema de saúde. Caso esteja perdendo peso sem motivo aparente, procure um médico."
                 backColor = getColor(R.color.amarelo)
             } else if (resultado > 22.0 && resultado < 27.0) {
                 valorIMC = resultado.toString()
+                classificacao = "Peso adequado"
                 informacao = "Você está no peso ideal. Parabéns! Mantenha seus hábitos alimentares e cuidados com a " +
                         "saúde"
                 backColor = getColor(R.color.azul)
             } else if (resultado >= 27.0) {
                 valorIMC = resultado.toString()
+                classificacao = "Sobrepeso"
                 informacao = "Sinal de alerta! O excesso de peso é fator de risco para desenvolvimento de outros problemas de saúde. A boa notícia\n" +
                         "é que uma pequena perda de peso já traz benefícios à saúde. Procure um médico para definir o tratamento mais adequado\n" +
                         "para você"

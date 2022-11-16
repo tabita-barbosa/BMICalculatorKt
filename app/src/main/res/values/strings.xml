@@ -1,0 +1,11 @@
+<resources>
+    <string name="titulo">Calculadora de IMC</string>
+    <string name="app_name">BMICalculator</string>
+    <string name="peso">Peso em KG</string>
+    <string name="altura">Altura em cm</string>
+    <string name="idoso_lbl">Idoso</string>
+    <string name="adulto_lbl">Adulto</string>
+    <string name="btn_calcular">Calcular</string>
+    <string name="info_inicial">Este é um aplicativo que serve para referência apenas. Em todo caso, um médico deve ser
+consultado</string>
+</resources>

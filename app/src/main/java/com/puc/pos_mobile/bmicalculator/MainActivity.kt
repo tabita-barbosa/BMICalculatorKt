@@ -3,21 +3,22 @@ package com.puc.pos_mobile.bmicalculator
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import android.widget.EditText
 import com.puc.pos_mobile.bmicalculator.databinding.ActivityMainBinding
+import java.math.BigDecimal
 import kotlin.math.pow
+import kotlin.math.sign
 
 class MainActivity : AppCompatActivity() {
 
     // variaveis
     private lateinit var binding: ActivityMainBinding
 
-    var valorAltura = findViewById(R.id.pesoId) as EditText
-    var valorPeso = findViewById(R.id.pesoId) as EditText
     var alturaFinal = 0.0
     var pesoFinal = 0.0
-    var valorResultado = 0.0
+    var valorResultado: Double = 0.0
     var grupoEtario = 0
 
     companion object {
@@ -42,15 +43,15 @@ class MainActivity : AppCompatActivity() {
 
     private fun configButtonListener() {
         binding.btnCalcular.setOnClickListener {
+            verificaPeso()
+            verificaAltura()
+            verificaIdade()
+            calculaImc()
             showResultado()
         }
     }
 
     private fun showResultado(){
-        verificaPeso()
-        verificaAltura()
-        calculaImc()
-
         val intent = Intent(this, ResultadoActivity::class.java).apply {
             putExtra(IDADE, grupoEtario)
             putExtra(RESULTADO, valorResultado)
@@ -86,25 +87,38 @@ class MainActivity : AppCompatActivity() {
         binding.btnCalcular.setBackgroundColor(color)
     }
 
-    private fun verificaPeso(){
-        if (valorPeso.getText().toString().trim().isEmpty() || Integer.parseInt(valorPeso.getText().toString()) > 0) {
-            pesoFinal = valorPeso.text.toString().toDouble()
+    private fun verificaPeso(): Double{
+        if (!binding.pesoId.text.isNullOrBlank() || binding.pesoId.toString().toDouble() > 0 ) {
+            pesoFinal = binding.pesoId.text.toString().toDouble()
         } else {
+            binding.btnCalcular.isEnabled = false
             Toast.makeText(this, "Digite um valor diferente de 0 no campo peso", Toast.LENGTH_SHORT).show()
+            binding.pesoId.requestFocus()
         }
+        return pesoFinal
     }
 
-    private fun verificaAltura(){
-        if (valorAltura.getText().toString().trim().isEmpty() || Integer.parseInt(valorAltura.getText().toString()) > 0) {
-            alturaFinal = valorAltura.text.toString().toDouble()
+    private fun verificaAltura(): Double{
+        if (!binding.alturaId.text.isNullOrBlank() || binding.alturaId.toString().toDouble() > 0) {
+            alturaFinal = binding.alturaId.text.toString().toDouble()
         } else {
+            binding.btnCalcular.isEnabled = false
             Toast.makeText(this, "Digite um valor diferente de 0 no campo altura", Toast.LENGTH_SHORT).show()
+            binding.alturaId.requestFocus()
         }
+        return alturaFinal
     }
 
-    private fun calculaImc(){
+    private fun verificaIdade(): Int {
+        if (binding.rbAdulto.isChecked) grupoEtario = 1
+        if (binding.rbIdoso.isChecked) grupoEtario = 2
+        return grupoEtario
+    }
+
+    private fun calculaImc(): Double{
         valorResultado = pesoFinal/alturaFinal.pow(2)
-        print(valorResultado)
+        println(valorResultado)
+        return valorResultado
     }
 
 }

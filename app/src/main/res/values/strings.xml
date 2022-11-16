@@ -6,6 +6,7 @@
     <string name="idoso_lbl">Idoso</string>
     <string name="adulto_lbl">Adulto</string>
     <string name="btn_calcular">Calcular</string>
+    <string name="btn_voltarInicio">Voltar ao início</string>
     <string name="info_inicial">Este é um aplicativo que serve para referência apenas. Em todo caso, um médico deve ser
 consultado</string>
 </resources>

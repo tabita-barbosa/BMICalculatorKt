@@ -15,12 +15,8 @@ class TelaInicialActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnMain.setOnClickListener {
-            setIntent()
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
-    }
-
-    private fun setIntent(){
-        val intent = Intent(this, MainActivity::class.java)
-        startActivity(intent)
     }
 }

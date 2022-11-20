@@ -84,7 +84,6 @@ class MainActivity : AppCompatActivity() {
                 getColor(R.color.teal_700)
             }
         }
-        binding.btnCalcular.setBackgroundColor(color)
     }
 
     private fun verificaPeso(): Double{
@@ -116,8 +115,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun calculaImc(): Double{
-        valorResultado = pesoFinal/alturaFinal.pow(2)
-        println(valorResultado)
+        valorResultado = (pesoFinal/(alturaFinal*2))*100
         return valorResultado
     }
 

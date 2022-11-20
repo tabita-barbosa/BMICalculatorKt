@@ -9,4 +9,32 @@
     <string name="btn_voltarInicio">Voltar ao início</string>
     <string name="info_inicial">Este é um aplicativo que serve para referência apenas. Em todo caso, um médico deve ser
 consultado</string>
+    <string name="peso_baixo">Abaixo do peso</string>
+    <string name="peso_normal">Peso normal</string>
+    <string name="excesso_peso">Excesso de peso</string>
+    <string name="obesidadeUm">Obesidade classe 1</string>
+    <string name="obesidadeDois">Obesidade classe 2</string>
+    <string name="obesidadeTres">Obesidade classe 3</string>
+    <string name="peso_okay">Peso adequado</string>
+    <string name="sobrepeso">Sobrepeso</string>
+
+    <string name="txt_baixo">Você está abaixo do peso ideal. Isso pode ser apenas uma característica pessoal, mas
+        também pode ser um sinal de desnutrição ou de algum problema de saúde. Caso esteja perdendo peso sem motivo aparente,
+        procure um médico.</string>
+    <string name="txt_normal">Você está no peso ideal. Parabéns! Mantenha seus hábitos alimentares e cuidados com
+        a saúde.</string>
+    <string name="txt_excesso">Atenção! Alguns quilos a mais já são suficientes para que algumas pessoas desenvolvam
+        doenças associadas, como diabetes e hipertensão. É importante rever seus hábitos. Procure um médico.</string>
+    <string name="txt_obesidadeUm">Sinal de alerta! O excesso de peso é fator de risco para desenvolvimento de outros
+        problemas de saúde. A boa notícia é que uma pequena perda de peso já traz benefícios à saúde. Procure um
+        médico para definir o tratamento mais adequado para você.</string>
+    <string name="txt_obesidadeDois">Sinal vermelho! Ao atingir este nível de IMC, o risco de doenças associadas está
+        entre alto e muito alto. Busque ajuda de um profissional de saúde, não perca tempo.</string>
+    <string name="txt_obesidadeTres">Sinal vermelho! Ao atingir este nível de IMC, o risco de doenças associadas é
+        muito alto. Busque ajuda de um profissional de saúde, não perca tempo!</string>
+    <string name="txt_adequado">Você está no peso ideal. Parabéns! Mantenha seus hábitos alimentares e cuidados com a
+        saúde.</string>
+    <string name="txt_sobrepeso">Sinal de alerta! O excesso de peso é fator de risco para desenvolvimento de outros
+        problemas de saúde. A boa notícia é que uma pequena perda de peso já traz benefícios à saúde. Procure um médico para definir o
+        tratamento mais adequado para você.</string>
 </resources>
